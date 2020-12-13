@@ -79,7 +79,9 @@
                 <div class="row text-center border-bottom border-primary rounded-pill border border-primary border-bottom-0">
                     <h1 class="text-primary">IDE Terbaru</h1>
                 </div>
-                <div class="table100 ">
+
+                here
+                <!-- <div class="table100 ">
                     <table>
                         <thead>
                             <tr class="table100-head ">
@@ -106,7 +108,7 @@
                             <? endforeach; ?>
                         </tbody>
                     </table>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
