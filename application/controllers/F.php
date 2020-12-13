@@ -13,8 +13,10 @@ class F extends CI_Controller
     {
         $data['val'] = [$this->All_data(), $this->daerah()];
         // var_dump($data['val'][0]['get_all']['IDE_tabel']);die;
-        $this->list_semua_IDE($data);
-        $this->list_semua_JOB($data);
+        // var_dump($data);die;
+        $this->list_semua_IDE($data['val'][0]['get_all']['IDE_tabel']);
+        // $this->list_semua_JOB($data['val'][0]['get_all']['JOB_Tabel']);
+        // $this->load->view('IDE/login_s');
     }
     public function Rincian()
     {
@@ -52,15 +54,24 @@ class F extends CI_Controller
     }
     public function list_semua_IDE($pas)
     {
-        $mas = $pas['val'][0]['get_all']['IDE_tabel'];
+        $mas = $pas;
         $data['data'] = $mas;
         $this->load->view('IDE/list_semua_IDE', $data);
     }
     public function list_semua_JOB($pas)
     {
-        $mas = $pas['val'][0]['get_all']['JOB_Tabel'];
+        $mas = $pas;
         $data['data'] = $mas;
         $this->load->view('IDE/list_semua_JOB', $data);
+    }
+    public function list_idemu()
+    {
+        $data2 = $this->All_data();
+        // var_dump($data2);
+        // die;
+        $this->list_semua_JOB($data2['get_user_post']['JOB_Tabel']);
+        $this->list_semua_IDE($data2['get_user_post']['IDE_tabel']);
+        $this->load->view('IDE/login_s');
     }
     public function All_data()
     {
@@ -74,7 +85,8 @@ class F extends CI_Controller
             // $vs[$value] = $vs[$value];
         }
         $data['get_all'] = $vs;
-
+        // var_dump($data);
+        // die;
         if (!empty($_SESSION['id'])) {
             // datatkan semua data IDE dan JOB sesuai dengan yang pernah di tuliskan user
             foreach ($tabel_call as $key => $value) {
@@ -117,9 +129,18 @@ class F extends CI_Controller
     }
     public function All_IJ_byID($tabel, $id)
     {
+        $data = [];
         $set = array('id_user' => $id);
         $ey = $this->db->get_where($tabel, $set)->result();
-        return $ey;
+        foreach ($ey as $key => $value) {
+            $set2 = array('id' => $value->id_user);
+            $e = $this->db->get_where('user', $set2)->result();
+            foreach ($e as $key1 => $value2) {
+                $data[$key]['user'] = $value2;
+            }
+            $data[$key]['ide'] = $value;
+        }
+        return $data;
     }
     public function all_IJ($tabel)
     {

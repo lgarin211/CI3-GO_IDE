@@ -51,7 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 $route['default_controller'] = 'F';
 $route['R'] = 'F/Rincian';
-// $route[''] = 'F/Rincian';
+$route['IDEKU'] = 'F/list_idemu';
 $route['Login'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;

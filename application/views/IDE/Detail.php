@@ -67,7 +67,7 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="card">
-                        <iframe frameborder="0" srcdoc="<?= $Detail[0]['item']->Deskripsi?>"></iframe>
+                        <iframe frameborder="0" srcdoc="<pre><?= $Detail[0]['item']->Deskripsi?></pre>"></iframe>
                     </div>
                 </div>
                 <div class="col-md-1"></div>

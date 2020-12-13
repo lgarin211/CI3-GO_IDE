@@ -73,6 +73,30 @@ class User extends CI_Controller
         $this->load->view('IDE/IDE_input', $data);
         $this->load->view('templates/footer');
     }
+    public function input_job()
+    {
+        if (!empty($_POST)) {
+             $data = array(
+                'id_user' => $_SESSION['id'],
+                'judul' => $_POST['judul'],
+                'Lokasi' => $_POST['lokasi'],
+                'Deskripsi' => $_POST['Deskripsi'],
+                'Di_Kirim' => date('Y-m-d'),
+                'Progres' => 0,
+                'view' => 0
+            );
+            $this->db->insert('IDE_tabel', $data);
+            return redirect('/');
+        }
+        $data['title'] = 'New JOB';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['daerah'] = $this->daerah();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('IDE/IDE_input', $data);
+        $this->load->view('templates/footer');
+    }
 
     public function edit()
     {
@@ -96,7 +120,7 @@ class User extends CI_Controller
 
             if ($upload_image) {
                 $config['allowed_types'] = 'gif|jpg|png';
-                $config['max_size']      = '2048';
+                $config['max_size']      = '7048';
                 $config['upload_path'] = './assets/img/profile/';
 
                 $this->load->library('upload', $config);
