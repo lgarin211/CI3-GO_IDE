@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JOB</title>
+    <title>IDE</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,17 +25,48 @@
 
 </head>
 
-<body style="">
+<body>
+
     <div class="limiter">
         <div class="container-table100">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="text-center navbar navbar-expand-lg navbar-light border-bottom border-primary rounded-pill">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">K<sup>26</sup>$ID<sub>.e</sub></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <? if (!empty($_SESSION['id'])) : ?>
+                                            <a class="btn btn-primary" href="<?= base_url('/auth') ?>">Dasbord</a>
+                                        <? else : ?>
+                                            <a class="btn btn-primary" href="<?= base_url('/auth') ?>">LOGIN</a>
+                                        <? endif ?>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class=" btn btn-danger" href="<?= base_url('/IDE') ?>">IDE</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
             <div class="wrap-table100">
-                <div class="table100">
+                <div class="row text-center border-bottom border-success rounded-pill border  border-bottom-0">
+                    <h1 class="text-success fw-bold ">JOB Terbaru</h1>
+                </div>
+                <div class="table100 ">
                     <table>
                         <thead>
-                            <tr class="table100-head">
-                                <th class="column1">judul</th>
-                                <th class="column2">Dibuat/Lokasi</th>
+                            <tr class="table100-head ">
+                                <th class="column1">Judul</th>
+                                <th class="column2">Dibuat</th>
                                 <th class="column3">Nama</th>
+                                <th class="column4">Lokasi</th>
                                 <th class="column6">view</th>
                             </tr>
                         </thead>
@@ -47,8 +78,9 @@
                                             <?= $value['ide']->judul ?>
                                         </a>
                                     </td>
-                                    <td class="column2"><?= $value['ide']->Di_Kirim . '/' . $value['ide']->Lokasi ?></td>
+                                    <td class="column2"><?= $value['ide']->Di_Kirim ?></td>
                                     <td class="column3"><?= $value['user']->name ?></td>
+                                    <td class="column4"><?= $value['ide']->Lokasi ?></td>
                                     <td class="column6"><?= $value['ide']->view ?></td>
                                 </tr>
                             <? endforeach; ?>

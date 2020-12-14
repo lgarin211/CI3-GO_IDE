@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)https://colorlib.com/etc/tb/Table_Responsive_v1/index.html -->
 <html lang="en" data-lt-installed="true">
 
 <head>
@@ -22,10 +21,12 @@
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/OTT') ?>/Table V01_files/util.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/OTT') ?>/Table V01_files/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
 </head>
 
-<body style="">
+<body>
 
     <div class="limiter">
         <div class="container-table100">
@@ -37,7 +38,7 @@
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class=" text-center collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
                                         <? if (!empty($_SESSION['id'])) : ?>
@@ -47,23 +48,10 @@
                                         <? endif ?>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Link</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Dropdown
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
+                                        <a class="btn btn-danger" href="#">IDE</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                        <a class="btn btn-success" href="#">JOB</a>
                                     </li>
                                 </ul>
                                 <!-- <form class="d-flex">
@@ -75,15 +63,12 @@
                     </nav>
                 </div>
             </div>
-            <div class="wrap-table100">
+            <div class="wrap-table100 container">
                 <div class="row text-center border-bottom border-primary rounded-pill border border-primary border-bottom-0">
-                    <h1 class="text-primary">IDE Terbaru</h1>
+                    <h3 class="text-primary"><?= $Detail[0]['item']->judul ?></h3>
                 </div>
-                <div class="container">
+                <div class="table100 shadow p-3 card border-bottom-0  border-primary">
                     <div class="row">
-                        <div class="col-md-12 text-center bg-dark">
-                            <h4 class="text-light"><?= $Detail[0]['item']->judul ?></h4>
-                        </div>
                         <div class="col-md-12 text-center">
                             <a href="" class="btn btn-danger"><i class="fas fa-envelope-open-text"></i>| Email now</a>
                             <a href="https://api.whatsapp.com/send/?phone=62<?= $Detail[0]['user']->No_wa ?>" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp"></i>| Whatapp now</a>
@@ -95,42 +80,38 @@
                                 </div>
                                 <div class="col-md-5">
                                     <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Name</th>
-                                                <td><?= $Detail[0]['user']->name ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">email</th>
-                                                <td><?= $Detail[0]['user']->email ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">No Whatapps</th>
-                                                <td><?= $Detail[0]['user']->No_wa ?></td>
-                                            </tr>
+                                        <ul>
+                                            <li>
+                                                <p>Name : <?= $Detail[0]['user']->name ?></p>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <p>Email : <?= $Detail[0]['user']->email ?></p>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>No Whatapps : <?= $Detail[0]['user']->No_wa ?></li>
+                                        </ul>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="col-md-5">
                                     <table class="table">
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">IDE</th>
-                                                <td><?= $Detail[0]['item']->judul ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Di Posting</th>
-                                                <td><?= $Detail[0]['item']->Di_Kirim ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Lokasi</th>
-                                                <td><?= $Detail[0]['item']->Lokasi ?></td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">View</th>
-                                                <td><?= $Detail[0]['item']->view ?></td>
-                                            </tr>
+                                            <ul>
+                                                <li>IDE : <?= $Detail[0]['item']->judul ?></li>
+                                            </ul>
+                                            <ul>
+                                                <li>Di Posting : <?= $Detail[0]['item']->Di_Kirim ?></li>
+                                            </ul>
+                                            <ul>
+                                                <li>Lokasi : <?= $Detail[0]['item']->Lokasi ?></li>
+                                            </ul>
+                                            <ul>
+                                                <li>View : <?= $Detail[0]['item']->view ?></li>
+                                            </ul>
                                         </tbody>
                                     </table>
                                 </div>
@@ -158,34 +139,7 @@
                     </div>
 
                 </div>
-                <!-- <div class="table100 ">
-                    <table>
-                        <thead>
-                            <tr class="table100-head ">
-                                <th class="column1">Judul</th>
-                                <th class="column2">Dibuat</th>
-                                <th class="column3">Nama</th>
-                                <th class="column4">Lokasi</th>
-                                <th class="column6">view</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <? foreach ($data as $key => $value) : ?>
-                                <tr>
-                                    <td class="column1">
-                                        <a href="<?= base_url('/R?call=D&id=' . $value['ide']->id) ?>">
-                                            <?= $value['ide']->judul ?>
-                                        </a>
-                                    </td>
-                                    <td class="column2"><?= $value['ide']->Di_Kirim ?></td>
-                                    <td class="column3"><?= $value['user']->name ?></td>
-                                    <td class="column4"><?= $value['ide']->Lokasi ?></td>
-                                    <td class="column6"><?= $value['ide']->view ?></td>
-                                </tr>
-                            <? endforeach; ?>
-                        </tbody>
-                    </table>
-                </div> -->
+
             </div>
         </div>
     </div>
@@ -212,7 +166,7 @@
         gtag('config', 'UA-23581568-13');
     </script>
     <script defer="" src="<?= base_url('/assets/OTT') ?>/Table V01_files/beacon.min.js" data-cf-beacon="{&quot;rayId&quot;:&quot;600ec7098f3e0bd6&quot;,&quot;version&quot;:&quot;2020.12.0&quot;,&quot;si&quot;:10}"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 </body>
 

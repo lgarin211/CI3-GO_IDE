@@ -50,6 +50,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'F';
+$route['JOB'] = 'F/JOB';
+$route['IDE'] = 'F/IDE';
 $route['R'] = 'F/Rincian';
 $route['IDEKU'] = 'F/list_idemu';
 $route['Login'] = 'auth';

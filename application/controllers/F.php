@@ -11,12 +11,23 @@ class F extends CI_Controller
 
     public function index()
     {
-        $data['val'] = [$this->All_data(), $this->daerah()];
+        // $data['val'] = [$this->All_data(), $this->daerah()];
         // var_dump($data['val'][0]['get_all']['IDE_tabel']);die;
         // var_dump($data);die;
-        $this->list_semua_IDE($data['val'][0]['get_all']['IDE_tabel']);
+        // $this->list_semua_IDE($data['val'][0]['get_all']['IDE_tabel']);
         // $this->list_semua_JOB($data['val'][0]['get_all']['JOB_Tabel']);
-        // $this->load->view('IDE/login_s');
+        $this->load->view('IDE/index');
+    }
+    public function JOB()
+    {
+        $data['val'] = [$this->All_data(), $this->daerah()];
+        $this->list_semua_JOB($data['val'][0]['get_all']['JOB_Tabel']);
+        # code...
+    }
+    public function IDE()
+    {
+        $data['val'] = [$this->All_data(), $this->daerah()];
+        $this->list_semua_IDE($data['val'][0]['get_all']['IDE_tabel']);
     }
     public function Rincian()
     {

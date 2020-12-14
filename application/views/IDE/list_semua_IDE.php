@@ -41,29 +41,13 @@
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
                                         <? if (!empty($_SESSION['id'])) : ?>
-                                            <a class="btn btn-primary" href="<?= base_url('/auth') ?>">Dasbord</a>
+                                            <a class="btn btn-primary " href="<?= base_url('/auth') ?>">Dasbord</a>
                                         <? else : ?>
-                                            <a class="btn btn-primary" href="<?= base_url('/auth') ?>">LOGIN</a>
+                                            <a class="btn btn-primary " href="<?= base_url('/auth') ?>">LOGIN</a>
                                         <? endif ?>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Link</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Dropdown
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                        <a class=" btn btn-success" href="<?=base_url('/JOB')?>">JOB</a>
                                     </li>
                                 </ul>
                                 <!-- <form class="d-flex">
@@ -76,12 +60,10 @@
                 </div>
             </div>
             <div class="wrap-table100">
-                <div class="row text-center border-bottom border-primary rounded-pill border border-primary border-bottom-0">
-                    <h1 class="text-primary">IDE Terbaru</h1>
+                <div class="row text-center border-bottom border-danger rounded-pill border border-primary border-bottom-0">
+                    <h1 class="text-danger fw-bold">IDE Terbaru</h1>
                 </div>
-
-                here
-                <!-- <div class="table100 ">
+                <div class="table100 ">
                     <table>
                         <thead>
                             <tr class="table100-head ">
@@ -108,7 +90,7 @@
                             <? endforeach; ?>
                         </tbody>
                     </table>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>

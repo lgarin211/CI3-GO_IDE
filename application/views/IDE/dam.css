@@ -1,0 +1,7 @@
+.bg-dos {
+    background-color: linear-gradient(to right, #000046, #1cb5e0) !important
+}
+
+a.bg-dos:focus, a.bg-dos:hover {
+    background-color: #0062cc !important
+}
